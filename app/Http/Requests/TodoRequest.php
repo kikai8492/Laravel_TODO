@@ -23,7 +23,8 @@ class TodoRequest extends FormRequest
     {
         return [
             'title'=>['required'],
-            'content'=>['required']
+            'content'=>['required'],
+            'limit'=>['required']
                 ];
     }
 }

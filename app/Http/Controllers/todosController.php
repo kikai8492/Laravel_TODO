@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\models\Todo;
 use App\Http\Requests\TodoRequests;
 
-class todosController extends Controller
+class TodosController extends Controller
 {
     /**
      * Display a listing of the resource.
