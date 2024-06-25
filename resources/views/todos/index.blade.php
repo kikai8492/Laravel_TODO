@@ -15,8 +15,19 @@
 
   <a href="{{ route('todo.create') }}">タスク追加</a> 
   <table>
-  @foreach($todos as $todo)
-  <th>{{$todo->title}}</th>
+    <thead>
+      <tr>
+        <th scope="col">タスク名</th>
+        <th scope="col">期限</th>
+      </tr>
+    </thead>
+    @foreach($todos as $todo)
+    <tr>
+      <td>{{$todo->title}}</td>
+      <td>{{$todo->limit}}</td>
+    </tr>
+    <tr>
+
   @endforeach
   </table>
 </body>

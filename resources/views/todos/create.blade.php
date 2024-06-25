@@ -6,12 +6,12 @@
   <title>Document</title>
 </head>
 <body>
-  <form action='{{route('blogs.store')}}' method='post'>
+  <form action='{{route('todo.store')}}' method='post'>
     @csrf
     <h1>タスク追加</h1>
-    <h3>タスク名:<input type='text'></input><h3>
-    <h4>タスク詳細:<input type='text'></input><h4>
-    <h4>期限:<input type="datetime-local"></h4>
+    <h3>タスク名:<input type='text' name='title'></input><h3>
+    <h4>タスク詳細:<input type='text' name='content'></input><h4>
+    <h4>期限:<input type="datetime-local" name="limit"></h4>
     <button type='submit'>追加</button>
   </form> 
 </body>

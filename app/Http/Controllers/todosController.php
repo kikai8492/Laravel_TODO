@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\Todo;
-use App\Http\Requests\TodoRequests;
+use App\Http\Requests\TodoRequest;
 
 class TodosController extends Controller
 {
@@ -17,49 +17,33 @@ class TodosController extends Controller
         return view('todos.index',compact('todos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('todos.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(TodoRequest $request)
     {
-        //
+        $validated = $request->validated();
+        Todo::create($validated);
+        return to_route('todo.index')-> with('success','ブログを投稿しました');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         //
