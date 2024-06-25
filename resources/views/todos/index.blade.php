@@ -13,7 +13,7 @@
 	</div>
   @endif
 
-  <a href="{{ route('todos.create') }}">タスク追加</a> 
+  <a href="{{ route('todo.create') }}">タスク追加</a> 
   <table>
   @foreach($todos as $todo)
   <th>{{$todo->title}}</th>

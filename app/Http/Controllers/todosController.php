@@ -22,7 +22,7 @@ class todosController extends Controller
      */
     public function create()
     {
-        //
+        return view('todos.create');
     }
 
     /**
