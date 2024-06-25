@@ -7,6 +7,17 @@
 </head>
 <body>
   <h1>タスク一覧</h1>
-  
+  @if(session('succcess'))
+	<div>
+		{{ session('succcess') }}
+	</div>
+  @endif
+
+  <a href="{{ route('todos.create') }}">タスク追加</a> 
+  <table>
+  @foreach($todos as $todo)
+  <th>{{$todo->title}}</th>
+  @endforeach
+  </table>
 </body>
 </html>

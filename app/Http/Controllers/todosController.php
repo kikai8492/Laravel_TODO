@@ -13,7 +13,7 @@ class todosController extends Controller
      */
     public function index()
     {
-        $todos = Todo.all();
+        $todos = Todo::all();
         return view('todos.index',compact('todos'));
     }
 
