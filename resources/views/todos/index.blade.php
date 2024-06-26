@@ -7,9 +7,9 @@
 </head>
 <body>
   <h1>タスク一覧</h1>
-  @if(session('succcess'))
+  @if(session('success'))
 	<div>
-		{{ session('succcess') }}
+		{{ session('success') }}
 	</div>
   @endif
 
@@ -17,14 +17,20 @@
   <table>
     <thead>
       <tr>
-        <th scope="col">タスク名</th>
-        <th scope="col">期限</th>
+        <th><h2>タスク名</h2></th>
+        <th><h2>期限</h2></th>
+        <th><h2>詳細</h2></th>
+        <th><h2>編集</h2></th>
+        <th><h2>完了</h2></th>
+
+
       </tr>
     </thead>
     @foreach($todos as $todo)
     <tr>
-      <td>{{$todo->title}}</td>
+      <td><h4>{{$todo->title}}</h4></td>
       <td>{{$todo->limit}}</td>
+      <td><a href="{{ route('todo.show', $todo->id) }}">詳細</a></td>
     </tr>
     <tr>
 

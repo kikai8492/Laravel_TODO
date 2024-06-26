@@ -8,9 +8,6 @@ use App\Http\Requests\TodoRequest;
 
 class TodosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $todos = Todo::orderBy('id','desc')->get();
@@ -26,22 +23,27 @@ class TodosController extends Controller
     {
         $validated = $request->validated();
         Todo::create($validated);
-        return to_route('todo.index')-> with('success','ブログを投稿しました');
+        return to_route('todo.index')-> with('success','追加しました');
     }
 
     public function show(string $id)
     {
-        //
+        $todo = Todo::find($id);
+        return view('todos.show', compact('todo'));
     }
 
     public function edit(string $id)
     {
-        //
+        $todo = Todo::find($id);
+        return view('todos.edit', ['todo' => $todo]);
     }
 
-    public function update(Request $request, string $id)
+    public function update(TodoRequest $request, string $id)
     {
-        //
+        $todo = Todo::find($id);
+        $validated = $request->validated();
+        $todo->update($validated);
+        return to_route('todos.index') -> with('success','ブログを更新しました');
     }
 
     public function destroy(string $id)

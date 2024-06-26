@@ -8,6 +8,17 @@
 <body>
   <form action='{{route('todo.store')}}' method='post'>
     @csrf
+    
+    @if($errors->any())
+      <div class="mb-8 py-4 px-6 border border-red-300 bg-red-50 rounded">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li class="text-red-400">{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+
     <h1>タスク追加</h1>
     <h3>タスク名:<input type='text' name='title'></input><h3>
     <h4>タスク詳細:<input type='text' name='content'></input><h4>
