@@ -43,11 +43,13 @@ class TodosController extends Controller
         $todo = Todo::find($id);
         $validated = $request->validated();
         $todo->update($validated);
-        return to_route('todos.index') -> with('success','ブログを更新しました');
+        return to_route('todo.index') -> with('success','更新しました');
     }
 
     public function destroy(string $id)
     {
-        //
+        $todo = Todo::find($id);
+        $todo->delete();
+        return redirect()->route('todo.index')->with('success', 'タスクを削除しました');
     }
 }

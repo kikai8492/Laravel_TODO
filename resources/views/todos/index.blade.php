@@ -31,6 +31,14 @@
       <td><h4>{{$todo->title}}</h4></td>
       <td>{{$todo->limit}}</td>
       <td><a href="{{ route('todo.show', $todo->id) }}">詳細</a></td>
+      <td><a href="{{ route('todo.edit', $todo->id) }}">編集</a></td>
+      <td>
+        <form action="{{route('todo.destroy', ['todo' => $todo->id]) }}" method="post">
+          @csrf
+          @method('DELETE')
+          <button>完了</button>
+        </form>
+      </td>
     </tr>
     <tr>
 

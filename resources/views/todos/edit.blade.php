@@ -16,6 +16,25 @@
     </div>
   @endif
   <h1>タスク編集</h1>
+  <form action='{{route('todo.update', ['todo' => $todo->id])}}' method='post'>
+    @csrf
+    @method('PUT')
+    <div>
+      <h4>タスク名:</h4><input type="text" name="title" id="title"/>
+    </div>
 
+    <div>
+      <h4>タスク詳細:</h4><input type="text" name="content" id="content"/>
+    </div>
+
+    <h4>期限:<input type="datetime-local" name="limit"></h4>
+
+    <div class="button">
+      <button type="submit">更新</button>
+    </div>
+</form>
+
+  
+<a href="{{ route('todo.index') }}">戻る</a> 
 </body>
 </html>
