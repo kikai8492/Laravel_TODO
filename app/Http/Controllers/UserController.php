@@ -7,7 +7,13 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
-    public function getSignup(){
-        return View('user.create');
+    public function create()
+    {
+
+    }
+
+    public function store(Request $request)
+    {
+
     }
 }
