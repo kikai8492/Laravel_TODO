@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+
 
 @section('content')
 <section class="py-8">
@@ -51,7 +51,7 @@
     </div>
 </section>
 
-<script>
+<!-- <script>
     // 画像プレビュー
     document.getElementById('image').addEventListener('change', e => {
         const previewImageNode = document.getElementById('previewImage')
@@ -63,5 +63,5 @@
             previewImageNode.src = previewImageNode.dataset.noimage
         }
     })
-</script>
+</script> -->
 @endsection
