@@ -5,4 +5,4 @@ use App\Http\Controllers\TodosController;
 use App\Http\Controllers\UserController;
 
 Route::resource('/todo', TodosController::class);
-// Route::resource('/users', UserController::class);
+Route::resource('/users', UserController::class);
